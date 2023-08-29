@@ -8,7 +8,7 @@ interface Props {
     username: string;
     imgUrl: string;
     bio: string;
-    type?: string;
+    type?: 'User' | 'Community';
 }
 
 const ProfileHeader = ({ accountId,
@@ -39,7 +39,7 @@ const ProfileHeader = ({ accountId,
                 </div>
                 {accountId === authUserId && type !== "Community" && (
                     <Link href='/profile/edit'>
-                        <div className='flex cursor-pointer gap-3 rounded-lg bg-dark-3 px-4 py-2'>
+                        <div className='flex cursor-pointer gap-3 rounded-lg bg-dark-3 px-4 py-2 hover:bg-gray-800'>
                             <Image
                                 src='/assets/edit.svg'
                                 alt='logout'
